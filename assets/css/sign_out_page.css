@@ -1,0 +1,30 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+
+
+body{
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    font-family: 'Fira Sans', sans-serif;
+}
+.first:hover{
+    background-color: rgb(239, 229, 229);
+    color: black;
+}
+.second:hover{
+    background-color: rgb(239, 229, 229);
+    color: black;
+}
+.third:hover{
+    background-color: rgb(239, 229, 229);
+    color: black;
+}
+.four:hover{
+    background-color: rgb(239, 229, 229);
+    color: black;
+}
+.five:hover{
+    background-color: rgb(43, 129, 196);
+    color: black;
+} */

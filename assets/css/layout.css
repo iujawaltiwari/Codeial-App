@@ -1,0 +1,6 @@
+body {
+  margin: 0; }
+  body #layout-main {
+    height: 77.2vh; }
+  body #layout-footer {
+    height: 20%; }
