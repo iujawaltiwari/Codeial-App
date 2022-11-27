@@ -15,5 +15,13 @@
             list-style: none;
         }
     }
-
+    
+}
+#social-icon{
+    img{
+        height: 45px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 12px;
+    }
 }
