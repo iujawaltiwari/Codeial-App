@@ -1,9 +1,10 @@
 body{
     margin: 0;
     // text-align: center;
-
+    
     #layout-main{
         height: 77.2vh;
+        overflow: scroll;
     }
     #layout-footer{
         height: 20%;

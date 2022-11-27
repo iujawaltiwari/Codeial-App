@@ -1,6 +1,7 @@
 body {
   margin: 0; }
   body #layout-main {
-    height: 77.2vh; }
+    height: 77.2vh;
+    overflow: scroll; }
   body #layout-footer {
     height: 20%; }
