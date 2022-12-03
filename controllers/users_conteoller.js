@@ -19,7 +19,7 @@ module.exports.update = async function(req,res){
     //     return res.status(401).send('Unauthorized');
     // }
       console.log('call');
-      console.log(req)
+      console.log(req.file)
      if(req.user.id == req.params.id){
 
       try{
