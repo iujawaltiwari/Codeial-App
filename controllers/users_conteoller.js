@@ -18,7 +18,8 @@ module.exports.update = async function(req,res){
           //  req.flash('error','Unauthorized');
     //     return res.status(401).send('Unauthorized');
     // }
-
+      console.log('call');
+      console.log(req)
      if(req.user.id == req.params.id){
 
       try{
@@ -28,12 +29,12 @@ module.exports.update = async function(req,res){
           if(err){
             console.log('******Multer Error', err);
           }
-          
+          console.log('******Multer Success');
           console.log(req.file);
 
         })
 
-      }catch{
+      }catch(err){
 
         req.flash('error', err);
         return res.redirect('back');

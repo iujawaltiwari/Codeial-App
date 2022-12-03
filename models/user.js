@@ -30,10 +30,11 @@ let storage = multer.diskStorage({
       cb(null, path.join(__dirname, '..', AVATAR_PATH) );
     },
     filename: function (req, file, cb) {
+        console.log(file);
       cb(null, file.fieldname + '-' + Date.now());
     }
   });
-
+console.log('-----',storage)
   //static methods or function
   userSchema.static.uploadedAvatar = multer({storage: storage}).single('avatar');
   userSchema.static.avatarPath = AVATAR_PATH;
