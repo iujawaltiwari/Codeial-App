@@ -19,7 +19,8 @@ module.exports.update = async function(req,res){
     //     return res.status(401).send('Unauthorized');
     // }
       console.log('call');
-      console.log(req.file)
+      // console.log(req.file)
+
      if(req.user.id == req.params.id){
 
       try{
@@ -28,6 +29,16 @@ module.exports.update = async function(req,res){
         User.uploadedAvatar(req, res, function(err){
           if(err){
             console.log('******Multer Error', err);
+
+            user.name = req.body.name;
+            user.email = req.body.email;
+            if(req.file){
+              //this is saving the path of the uploaded into the avatar field in the user
+              user.avatar = User.avatarPath + '/' + req.file.filename
+
+            }
+            user.save()
+            return res.redirect('back');
           }
           console.log('******Multer Success');
           console.log(req.file);
