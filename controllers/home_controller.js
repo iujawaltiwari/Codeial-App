@@ -20,7 +20,7 @@ module.exports.home = async function (req, res) {
         populate: {
           path: "user",
         },
-      });
+      }).sort({createdAt:-1});// use sort by whenever you need last updated first
     let users = await User.find({});
     return res.render("home", {
       title: "Codeial | Home",
