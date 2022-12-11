@@ -12,29 +12,37 @@ module.exports.home = async function (req, res) {
   //     });
   // });
 
-  try {
-      //populate the user of each post
+  try{
+    // CHANGE :: populate the likes of each post and comment
     let posts = await Post.find({})
-      .populate("user")
-      .populate({
-        path: "comments",
+    .sort('-createdAt')
+    .populate('user')
+    .populate({
+        path: 'comments',
         populate: {
-          path: "user",
+            path: 'user'
         },
-      }).sort({createdAt:-1});// use sort by whenever you need last updated first
+        populate: {
+            path: 'likes'
+        }
+    }).populate('comments')
+    .populate('likes');
+
+
     let users = await User.find({});
-    return res.render("home", {
-      title: "Codeial | Home",
-      posts: posts,
-      all_users: users,
+
+    return res.render('home', {
+        title: "Codeial | Home",
+        posts:  posts,
+        all_users: users
     });
-  } catch (err) {
+
+}catch(err){
     console.log('Error', err);
     return;
-  }
+}
 
-  // populate the user of each post
-};
+}
 
 // module.exports.actionName = function(req, res){}
 
